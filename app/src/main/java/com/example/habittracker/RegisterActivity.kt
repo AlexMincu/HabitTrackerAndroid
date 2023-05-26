@@ -20,6 +20,7 @@ class RegisterActivity : AppCompatActivity() {
 
         firebaseAuth = FirebaseAuth.getInstance()
 
+        // Register account to firebase
         binding.registerButton.setOnClickListener {
             val email = binding.emailInput.text.toString()
             val password = binding.passwordInput.text.toString()
@@ -51,6 +52,7 @@ class RegisterActivity : AppCompatActivity() {
             }
         }
 
+        // Go to Login button
         binding.loginTextView.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)

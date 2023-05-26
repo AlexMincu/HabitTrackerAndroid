@@ -21,19 +21,21 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var googleSignInClient: GoogleSignInClient
 
 
-    private val launcher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
-        result ->
-            if(result.resultCode == Activity.RESULT_OK) {
+    // Google register task
+    private val launcher =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+            if (result.resultCode == Activity.RESULT_OK) {
                 val task = GoogleSignIn.getSignedInAccountFromIntent(result.data)
                 handleResults(task)
             }
-    }
+        }
 
+    // Google login handler
     private fun handleResults(task: Task<GoogleSignInAccount>) {
-        if(task.isSuccessful) {
-            val account : GoogleSignInAccount? = task.result
+        if (task.isSuccessful) {
+            val account: GoogleSignInAccount? = task.result
 
-            if(account != null) {
+            if (account != null) {
                 updateUI(account)
             }
         } else {
@@ -41,8 +43,10 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
+    // Google login
     private fun updateUI(account: GoogleSignInAccount) {
         val credential = GoogleAuthProvider.getCredential(account.idToken, null)
+
         firebaseAuth.signInWithCredential(credential).addOnCompleteListener {
             if (it.isSuccessful) {
                 val intent = Intent(this, MainActivity::class.java)
@@ -69,6 +73,7 @@ class LoginActivity : AppCompatActivity() {
 
         googleSignInClient = GoogleSignIn.getClient(this, googleSignInOptions)
 
+        // Email login
         binding.loginButton.setOnClickListener {
             val email = binding.emailInput.text.toString()
             val password = binding.passwordInput.text.toString()
@@ -91,9 +96,8 @@ class LoginActivity : AppCompatActivity() {
             val signInIntent = googleSignInClient.signInIntent
             launcher.launch(signInIntent)
         }
-
-
-
+        
+        // Register button
         binding.registerTextView.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)

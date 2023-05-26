@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.habittracker.databinding.FragmentHabitsNavBinding
@@ -36,10 +37,11 @@ class HabitsNavFragment : Fragment() {
 
     private lateinit var floatingActionButton: FloatingActionButton
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         binding = FragmentHabitsNavBinding.inflate(layoutInflater)
         return binding.root
@@ -72,6 +74,19 @@ class HabitsNavFragment : Fragment() {
             val intent = Intent(activity, AddHabit::class.java)
             startActivity(intent)
         }
+
+        val swipeToDeleteCallback = object : SwipeToDeleteCallback() {
+            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+                val position = viewHolder.adapterPosition
+
+                habitList.removeAt(position)
+                recyclerView.adapter?.notifyItemRemoved(position)
+            }
+        }
+
+        val itemTouchHelper = ItemTouchHelper(swipeToDeleteCallback)
+        itemTouchHelper.attachToRecyclerView(recyclerView)
+
     }
 
 

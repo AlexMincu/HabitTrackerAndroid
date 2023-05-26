@@ -23,7 +23,6 @@ class HabitAdapter(private var habitList: List<Habit>) :
         holder.name.text = currentHabit.name
     }
 
-
     inner class HabitViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val name: TextView = itemView.findViewById(R.id.habitTitle)
     }
