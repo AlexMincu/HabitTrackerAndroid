@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/habitsNavFragment">
+
+    <fragment
+        android:id="@+id/habitsNavFragment"
+        android:name="com.example.habittracker.HabitsNavFragment"
+        android:label="fragment_habits_nav"
+        tools:layout="@layout/fragment_habits_nav" />
+    <fragment
+        android:id="@+id/statisticsNavFragment"
+        android:name="com.example.habittracker.StatisticsNavFragment"
+        android:label="fragment_statistics_nav"
+        tools:layout="@layout/fragment_statistics_nav" />
+    <fragment
+        android:id="@+id/accountNavFragment"
+        android:name="com.example.habittracker.AccountNavFragment"
+        android:label="fragment_account_nav"
+        tools:layout="@layout/fragment_account_nav" />
+</navigation>

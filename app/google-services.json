@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "265593353430",
+    "project_id": "habittracker-cdded",
+    "storage_bucket": "habittracker-cdded.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:265593353430:android:df0f8ba66614153ae4c577",
+        "android_client_info": {
+          "package_name": "com.example.habittracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "265593353430-6f4vuobefv7mkueooku6hrepaatn26sl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.habittracker",
+            "certificate_hash": "47881337c4733f31e967b87300b7c9ccd4a2b37e"
+          }
+        },
+        {
+          "client_id": "265593353430-dbjl85g77udran7cvh2hc4edvo0goclv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBR906EY3Khp2oDyU-y-j8hh-i-PT8fHpQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "265593353430-39m46g05f3no5cnr7nr7fbnn2kdaulro.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

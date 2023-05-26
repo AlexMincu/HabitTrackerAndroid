@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/habitsNavFragment"
+        android:icon="@drawable/baseline_auto_awesome_24"
+        android:title="Habits" />
+    <item
+        android:id="@+id/statisticsNavFragment"
+        android:icon="@drawable/baseline_auto_graph_24"
+        android:title="Statistics" />
+    <item
+        android:id="@+id/accountNavFragment"
+        android:icon="@drawable/baseline_person_24"
+        android:title="Account" />
+</menu>
